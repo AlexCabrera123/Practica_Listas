@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-
+    private Button bMostrar;
     private EditText etAgregar;
     private Button bGuardar;
     private NodoLista primero = null;
@@ -18,17 +18,32 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+
         ListaEnlazada le = new ListaEnlazada();
         le.crearListaEnlazada();
         etAgregar = findViewById(R.id.etAgregar);
         bGuardar = findViewById(R.id.bGuardar);
+        bMostrar = findViewById(R.id.bMostrar);
 
         bGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int aux = Integer.parseInt(etAgregar.getText().toString().trim());
-                new NodoLista(aux,primero);
+                primero =  new NodoLista(aux,primero);
+                etAgregar.setText("");
+            }
+        });
+
+        bMostrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String resultado = "";
+                NodoLista auxPri = primero;
+                while(auxPri != null){
+                    resultado += auxPri+ " -> ";
+                    auxPri = auxPri.getEnlace();
+                }
+                Log.i("log",resultado);
             }
         });
 
