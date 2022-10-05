@@ -26,8 +26,9 @@ public class MainActivity extends AppCompatActivity {
     private ListView lvlista;
     private ArrayList alnumeros;
     private NodoLista primero = null;
-    private TextView promedio, cantidadsueldos, sumasueldos;
-
+    private TextView promediosueldos, cantidadsueldos, sumasueldos;
+    private Double suma,promedio;
+    private int cantidad;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         bGuardar = findViewById(R.id.bGuardar);
         sumasueldos = findViewById(R.id.SumaSueldos);
         cantidadsueldos = findViewById(R.id.CantidadSueldos);
-        promedio = findViewById(R.id.Promedio);
+        promediosueldos = findViewById(R.id.Promedio);
         ArrayList<Double> alnumeros = new ArrayList<>();
         ArrayAdapter<Double> adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1,alnumeros);
 
@@ -59,14 +60,22 @@ public class MainActivity extends AppCompatActivity {
                 NodoLista auxPri = primero;
                 alnumeros.clear();
                 while(auxPri != null){
+                    cantidad++;
                     resultado += null+" -> ";
                     auxPri = auxPri.getEnlace();
                     alnumeros.add(auxPri.getDato());
+                    suma += auxPri.getDato();
+                    auxPri = auxPri.getEnlace();
                 }
                 Log.i("Log",resultado);
 
+                Log.i("Log","Total de sueldos"+suma);
+                Log.i("Log","Cantidad de sueldos"+cantidad);
+                Log.i("Log","Promedio sueldos"+suma/cantidad);
+
                 lvlista.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
+
             }
         });
     }
