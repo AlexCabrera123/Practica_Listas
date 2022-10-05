@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/etAgregar"
-        android:inputType="number"></EditText>
+        android:inputType="numberDecimal"></EditText>
 
     <Button
         android:layout_width="wrap_content"
@@ -19,13 +19,37 @@
         android:layout_below="@id/etAgregar"
         android:text="Guardar"></Button>
 
-    <Button
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/bMostrar"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="45sp"
-        android:text="Mostrar"></Button>
+        android:id="@+id/SumaSueldos"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/bGuardar"
+        ></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/CantidadSueldos"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/SumaSueldos"
+        ></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Promedio"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/CantidadSueldos"
+        ></TextView>
+
+    <ListView
+        android:id="@+id/lvlista"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/Promedio"
+        />
 
 
 </RelativeLayout>

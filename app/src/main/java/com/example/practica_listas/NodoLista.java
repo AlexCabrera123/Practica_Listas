@@ -1,20 +1,20 @@
 package com.example.practica_listas;
 
 public class NodoLista {
-    int dato;
+    double dato;
     NodoLista enlace;
 
-    public NodoLista(int x){
+    public NodoLista(double x){
         dato = x;
         enlace = null;
     }
 
-        public NodoLista(int x, NodoLista n){
+        public NodoLista(double x, NodoLista n){
         dato = x;
         enlace = n;
         }
 
-        public int getDato() { return dato; }
+        public double getDato() { return dato; }
     public NodoLista getEnlace(){
         return enlace;
     }

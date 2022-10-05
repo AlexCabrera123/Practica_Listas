@@ -23,6 +23,7 @@ public class ListaEnlazada {
             aux = aux.getEnlace();
         }
         return resultado;
+
     }
 
 }
