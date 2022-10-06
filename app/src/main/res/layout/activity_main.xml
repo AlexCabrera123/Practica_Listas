@@ -19,6 +19,13 @@
         android:layout_below="@id/etAgregar"
         android:text="Guardar"></Button>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bBuscar"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/etAgregar"
+        android:text="Buscar"></Button>
 
     <ListView
         android:id="@+id/lvlista"
